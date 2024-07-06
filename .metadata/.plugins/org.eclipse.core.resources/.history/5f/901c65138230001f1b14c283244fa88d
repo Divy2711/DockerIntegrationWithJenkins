@@ -1,0 +1,5 @@
+package com.ecomm.service.product.repository;
+
+public class ProductRepository {
+
+}

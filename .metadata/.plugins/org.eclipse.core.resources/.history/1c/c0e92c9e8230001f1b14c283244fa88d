@@ -1,0 +1,5 @@
+package com.ecomm.service.product.model;
+
+public class product {
+
+}

@@ -1,0 +1,8 @@
+package com.ecomm.service.order.feign;
+
+import org.springframework.cloud.openfeign.FeignClient;
+
+@FeignClient(name="ProductService")
+public class ProductClient {
+
+}

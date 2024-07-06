@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<qualifiedTypeNameHistroy>
+    <fullyQualifiedTypeName name="org.springframework.cloud.netflix.eureka.server.EnableEurekaServer"/>
+    <fullyQualifiedTypeName name="com.ecomm.service.product.repository.ProductRepository"/>
+    <fullyQualifiedTypeName name="com.ecomm.service.product.model.product"/>
+    <fullyQualifiedTypeName name="com.ecomm.service.product.service.ProductService"/>
+    <fullyQualifiedTypeName name="com.ecomm.service.product.model.Product"/>
+    <fullyQualifiedTypeName name="com.ecomm.service.order.repository.OrderRepository"/>
+    <fullyQualifiedTypeName name="lombok.Data"/>
+    <fullyQualifiedTypeName name="lombok.Getter"/>
+    <fullyQualifiedTypeName name="lombok.Setter"/>
+    <fullyQualifiedTypeName name="lombok.AllArgsConstructor"/>
+    <fullyQualifiedTypeName name="com.ecomm.service.order.feign.ProductClient"/>
+    <fullyQualifiedTypeName name="com.ecomm.service.order.dto.Product"/>
+    <fullyQualifiedTypeName name="java.util.List"/>
+    <fullyQualifiedTypeName name="com.ecomm.service.order.service.OrderService"/>
+    <fullyQualifiedTypeName name="com.ecomm.service.order.model.Order"/>
+    <fullyQualifiedTypeName name="jakarta.persistence.GeneratedValue"/>
+    <fullyQualifiedTypeName name="com.ecomm.service.order.dto.orderDTO"/>
+    <fullyQualifiedTypeName name="org.springframework.cloud.openfeign.FeignClient"/>
+    <fullyQualifiedTypeName name="com.ecomm.service.inventory.dto.OrderDTO"/>
+    <fullyQualifiedTypeName name="jakarta.persistence.Entity"/>
+    <fullyQualifiedTypeName name="jakarta.persistence.Table"/>
+    <fullyQualifiedTypeName name="jakarta.persistence.Id"/>
+    <fullyQualifiedTypeName name="org.springframework.stereotype.Repository"/>
+    <fullyQualifiedTypeName name="org.springframework.data.jpa.repository.JpaRepository"/>
+    <fullyQualifiedTypeName name="org.springframework.stereotype.Service"/>
+    <fullyQualifiedTypeName name="com.ecomm.service.inventory.repository.InventoryRepository"/>
+    <fullyQualifiedTypeName name="com.ecomm.service.inventory.feign.OrderClient"/>
+    <fullyQualifiedTypeName name="com.ecomm.service.inventory.feign.ProductClient"/>
+    <fullyQualifiedTypeName name="com.ecomm.service.inventory.dto.ProductDTO"/>
+    <fullyQualifiedTypeName name="org.springframework.web.bind.annotation.RestController"/>
+    <fullyQualifiedTypeName name="org.springframework.beans.factory.annotation.Autowired"/>
+    <fullyQualifiedTypeName name="com.ecomm.service.inventory.service.InventoryService"/>
+    <fullyQualifiedTypeName name="org.springframework.web.bind.annotation.PostMapping"/>
+    <fullyQualifiedTypeName name="org.springframework.web.bind.annotation.RequestMapping"/>
+    <fullyQualifiedTypeName name="org.springframework.web.bind.annotation.RequestBody"/>
+    <fullyQualifiedTypeName name="com.ecomm.service.inventory.models.Inventory"/>
+    <fullyQualifiedTypeName name="org.springframework.web.bind.annotation.GetMapping"/>
+    <fullyQualifiedTypeName name="com.ecomm.service.inventory.dto.InventoryDTO"/>
+    <fullyQualifiedTypeName name="org.springframework.web.bind.annotation.PathVariable"/>
+    <fullyQualifiedTypeName name="org.springframework.cloud.client.discovery.EnableDiscoveryClient"/>
+    <fullyQualifiedTypeName name="org.springframework.cloud.openfeign.EnableFeignClients"/>
+</qualifiedTypeNameHistroy>

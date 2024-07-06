@@ -1,0 +1,5 @@
+package com.ecomm.service.order.model;
+
+public class Order {
+
+}

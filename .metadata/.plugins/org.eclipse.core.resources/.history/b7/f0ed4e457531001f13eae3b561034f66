@@ -1,0 +1,5 @@
+FROM openjdk:17-alpine
+ADD ./target/productService.jar /opt/app/productService.jar
+WORKDIR /opt/app
+ENV PATH = "${PATH}:${JAVA_HOME}/bin"
+ENTRYPOINT ["java","-jar","productService.jar"]

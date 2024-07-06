@@ -1,0 +1,76 @@
+
+version: '3.3'
+services:
+  eurekaserver:
+    build: EurekaServer
+    container_name: eurekacont
+    image: eureka:1.0.0
+    ports:
+      - "8761:8761" 
+    networks:
+      - servicenet
+    environment:
+      EUREKA_HOST_NAME: 54.234.159.166
+
+  gatewayservice:
+    build: Apigateway
+    container_name: apicont
+    image: api:1.0.0
+    ports:
+      - "9000:9000" 
+    networks:
+      - servicenet
+    environment:
+      EUREKA_HOST_NAME: 54.234.159.166
+    depends_on:
+      - eurekaserver
+
+  productservice:
+    build: ProductService
+    container_name: productcont
+    image: product:1.0.0
+    ports:
+      - "8080:8080" 
+    networks:
+      - servicenet
+    environment:
+      EUREKA_HOST_NAME: 54.234.159.166
+    depends_on:
+      - serviceregistry 
+      - gatewayservice
+
+  orderservice:
+    build: OrderService
+    container_name: ordercont
+    image: order:1.0.0
+    ports:
+      - "8081:8081" 
+    networks:
+      - servicenet
+    environment:
+      EUREKA_HOST_NAME: 54.234.159.166
+    depends_on:
+      - serviceregistry 
+      - gatewayservice
+      - productservice
+  
+  inventoryservice:
+    build: InventoryService
+    container_name: inventorycont
+    image: inventory:1.0.0
+    ports:
+      - "8082:8082" 
+    networks:
+      - servicenet
+    environment:
+      EUREKA_HOST_NAME: 54.234.159.166
+    depends_on:
+      - serviceregistry 
+      - gatewayservice
+      - productservice
+      - orderservice
+
+networks:
+  servicenet:
+    driver: bridge 
+  

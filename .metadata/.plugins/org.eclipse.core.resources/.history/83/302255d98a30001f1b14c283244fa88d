@@ -1,0 +1,10 @@
+package com.ecomm.service.order.feign;
+
+import org.springframework.cloud.openfeign.FeignClient;
+
+@FeignClient(name="ProductService")
+public interface ProductClient {
+
+	@GetMapping("/products/{id}")
+    Product getProductById(@PathVariable String id);
+}
