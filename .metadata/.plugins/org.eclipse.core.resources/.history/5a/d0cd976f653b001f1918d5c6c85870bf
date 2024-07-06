@@ -1,0 +1,14 @@
+package com.ecomm.service.order.feign;
+
+import org.springframework.cloud.openfeign.FeignClient;
+import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.RequestMapping;
+
+import com.ecomm.service.order.dto.Product;
+
+@FeignClient(name="api-gateway",url="${app.feign.config.url}")
+public interface ProductClient {
+
+	@RequestMapping("/products/getproductbyId/{id}")
+    public Product getProductById(@PathVariable String id);
+}

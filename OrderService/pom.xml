@@ -41,6 +41,8 @@
     <artifactId>spring-cloud-starter-openfeign</artifactId>
     <version>4.0.4</version>
 </dependency>
+
+
 <!-- https://mvnrepository.com/artifact/com.mysql/mysql-connector-j -->
 <dependency>
     <groupId>com.mysql</groupId>

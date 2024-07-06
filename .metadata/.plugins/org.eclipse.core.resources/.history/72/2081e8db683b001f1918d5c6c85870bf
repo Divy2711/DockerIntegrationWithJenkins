@@ -1,0 +1,14 @@
+package com.ecomm.service.inventory.feign;
+
+import org.springframework.cloud.openfeign.FeignClient;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
+
+import com.ecomm.service.inventory.dto.ProductDTO;
+
+@FeignClient(value="api-gateway")
+public interface ProductClient {
+
+	@GetMapping("${product.getProductById}")
+	public ProductDTO getProductById(@PathVariable String id);
+}

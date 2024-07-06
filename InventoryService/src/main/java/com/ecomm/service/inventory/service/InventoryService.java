@@ -6,8 +6,7 @@ import org.springframework.stereotype.Service;
 import com.ecomm.service.inventory.dto.InventoryDTO;
 import com.ecomm.service.inventory.dto.OrderDTO;
 import com.ecomm.service.inventory.dto.ProductDTO;
-import com.ecomm.service.inventory.feign.OrderClient;
-import com.ecomm.service.inventory.feign.ProductClient;
+import com.ecomm.service.inventory.feign.FeignClientforOrderandProduct;
 import com.ecomm.service.inventory.models.Inventory;
 import com.ecomm.service.inventory.repository.InventoryRepository;
 
@@ -18,10 +17,7 @@ public class InventoryService {
 	private InventoryRepository inventoryRepository;
 	
 	@Autowired
-	private OrderClient orderClient;
-	
-	@Autowired
-	private ProductClient productClient;
+	private FeignClientforOrderandProduct productorderClient;
 	
 	public Inventory addItemsToInventory(Inventory inventory) {
 		return inventoryRepository.save(inventory);
@@ -30,8 +26,8 @@ public class InventoryService {
 	public InventoryDTO itemsInInventory(String id) {
 		
 		Inventory inventory=inventoryRepository.findById(id).get();
-		OrderDTO orderDTO = orderClient.getOrderByID(inventory.getOrderid());
-		ProductDTO productDTO= productClient.getProductById(orderDTO.getProductId());
+		OrderDTO orderDTO = productorderClient.getOrderByID(inventory.getOrderid());
+		ProductDTO productDTO= productorderClient.getProductById(orderDTO.getProductId());
 		
 		InventoryDTO inventoryDTO= new InventoryDTO();
 		
