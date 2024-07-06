@@ -36,7 +36,7 @@ services:
     environment:
       EUREKA_HOST_NAME: 54.234.159.166
     depends_on:
-      - serviceregistry 
+      - eurekaserver
       - gatewayservice
 
   orderservice:
@@ -50,7 +50,7 @@ services:
     environment:
       EUREKA_HOST_NAME: 54.234.159.166
     depends_on:
-      - serviceregistry 
+      - eurekaserver 
       - gatewayservice
       - productservice
   
@@ -65,7 +65,7 @@ services:
     environment:
       EUREKA_HOST_NAME: 54.234.159.166
     depends_on:
-      - serviceregistry 
+      - eurekaserver 
       - gatewayservice
       - productservice
       - orderservice
