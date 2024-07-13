@@ -9,8 +9,6 @@ services:
       - "8761:8761" 
     networks:
       - servicenet
-    environment:
-      EUREKA_HOST_NAME: 54.234.159.166
 
   gatewayservice:
     build: Apigateway
@@ -21,8 +19,10 @@ services:
     networks:
       - servicenet
     environment:
-      EUREKA_HOST_NAME: 54.234.159.166
+      - eureka.client.serviceUrl.defaultZone=http://eurekaserver:8761/eureka/
     depends_on:
+      - eurekaserver
+    links:
       - eurekaserver
 
   productservice:
@@ -34,10 +34,12 @@ services:
     networks:
       - servicenet
     environment:
-      EUREKA_HOST_NAME: 54.234.159.166
+      - eureka.client.serviceUrl.defaultZone=http://eurekaserver:8761/eureka/
     depends_on:
       - eurekaserver
       - gatewayservice
+    links:
+      - eurekaserver
 
   orderservice:
     build: OrderService
@@ -48,11 +50,13 @@ services:
     networks:
       - servicenet
     environment:
-      EUREKA_HOST_NAME: 54.234.159.166
+      - eureka.client.serviceUrl.defaultZone=http://eurekaserver:8761/eureka/
     depends_on:
       - eurekaserver 
       - gatewayservice
       - productservice
+    links:
+      - eurekaserver
   
   inventoryservice:
     build: InventoryService
@@ -63,12 +67,14 @@ services:
     networks:
       - servicenet
     environment:
-      EUREKA_HOST_NAME: 54.234.159.166
+      - eureka.client.serviceUrl.defaultZone=http://eurekaserver:8761/eureka/
     depends_on:
       - eurekaserver 
       - gatewayservice
       - productservice
       - orderservice
+    links:
+      - eurekaserver
 
 networks:
   servicenet:
